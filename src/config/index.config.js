@@ -19,20 +19,32 @@ function required(name, defaultValue = null) {
   return value;
 }
 
+// Fixed optional helper logic so missing optional fields don't accidentally execute the required() exit handler
 function optional(name, defaultValue = '') {
-  return required(name, defaultValue);
+  const value = process.env[name];
+  return value === undefined || value === null ? defaultValue : value;
 }
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 const config = {
   NODE_ENV: process.env.NODE_ENV || 'development',
 
   PORT: Number(process.env.PORT) || 5000,
 
-  // Database
-  DATABASE_URL:  process.env.DATABASE_URL || required('DATABASE_URL', 'postgresql://postgres:@Math2029@localhost:5432/postgres'),
+  // Database 
+  // Bulletproof fallback protection: forces a real error if DATABASE_URL vanishes in production
+  DATABASE_URL: isProduction 
+    ? (process.env.DATABASE_URL || (() => { throw new Error("CRITICAL STARTUP ERROR: The DATABASE_URL environment variable is completely missing or blank in your Railway settings.") })())
+    : (process.env.DATABASE_URL || required('DATABASE_URL', 'postgresql://postgres:@Math2029@localhost:5432/postgres')),
+
+  ALLOW_INSECURE_DB: process.env.ALLOW_INSECURE_DB || 'false',
+  DB_SSL_CERT: process.env.DB_SSL_CERT || null,
 
   // Redis
-  REDIS_URL: required('REDIS_URL', 'redis://localhost:6379'),
+  REDIS_URL: isProduction 
+    ? (process.env.REDIS_URL || (() => { throw new Error("CRITICAL STARTUP ERROR: The REDIS_URL environment variable is completely missing or blank in your Railway settings.") })())
+    : required('REDIS_URL', 'redis://localhost:6379'),
 
   // JWT
   JWT_ACCESS_SECRET: required('JWT_ACCESS_SECRET', 'dev-access-secret'),
@@ -53,9 +65,6 @@ const config = {
 
   // SMTP
   SMTP_HOST: optional('SMTP_HOST', 'localhost'),
-  
-  ALLOW_INSECURE_DB: process.env.ALLOW_INSECURE_DB || 'false',
-  DB_SSL_CERT: process.env.DB_SSL_CERT || null,
 
   SMTP_PORT: Number(process.env.SMTP_PORT) || 587,
 
