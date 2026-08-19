@@ -53,6 +53,9 @@ const config = {
 
   // SMTP
   SMTP_HOST: optional('SMTP_HOST', 'localhost'),
+  
+  ALLOW_INSECURE_DB: process.env.ALLOW_INSECURE_DB || 'false',
+  DB_SSL_CERT: process.env.DB_SSL_CERT || null,
 
   SMTP_PORT: Number(process.env.SMTP_PORT) || 587,
 
