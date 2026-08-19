@@ -1,0 +1,102 @@
+finance-ai/
+│
+├── core/
+│   ├── getMarketData.js
+│   ├── interpretFinancialStatement.js
+│   ├── analyzeRatios.js
+│   ├── runValuationModel.js
+│   ├── trackEconomicIndicators.js
+│   └── summarizeEarningsReport.js
+│
+├── investment/
+│   ├── analyzePortfolio.js
+│   ├── screenStocks.js
+│   ├── compareETFs.js
+│   ├── assessRisk.js
+│   ├── suggestAssetAllocation.js
+│   ├── rebalancePortfolio.js
+│   ├── calculateDCA.js
+│   ├── trackDividends.js
+│   ├── filterESGInvestments.js
+│   └── explainOptions.js
+│
+├── personalFinance/
+│   ├── buildBudget.js
+│   ├── categorizeExpenses.js
+│   ├── planSavingsGoal.js
+│   ├── trackNetWorth.js
+│   ├── analyzeCashFlow.js
+│   ├── calculateEmergencyFund.js
+│   ├── scoreFinancialHealth.js
+│   └── trackSubscriptions.js
+│
+├── debt/
+│   ├── calculateLoan.js
+│   ├── analyzeMortgage.js
+│   ├── modelDebtPayoff.js
+│   ├── improveCreditScore.js
+│   ├── evaluateDebtConsolidation.js
+│   ├── optimizeStudentLoan.js
+│   └── compareBuyVsLease.js
+│
+├── retirement/
+│   ├── projectRetirementSavings.js
+│   ├── optimize401k.js
+│   ├── strategizeSocialSecurity.js
+│   ├── calculateSafeWithdrawal.js
+│   ├── valuePension.js
+│   ├── estimateHealthcareCosts.js
+│   └── calculateRMD.js
+│
+├── tax/
+│   ├── explainTaxBrackets.js
+│   ├── harvestTaxLoss.js
+│   ├── optimizeCapitalGains.js
+│   ├── findDeductions.js
+│   ├── placeAssetsEfficiently.js
+│   ├── calculateEstimatedTax.js
+│   ├── optimizeW4Withholding.js
+│   └── flagInternationalTax.js
+│
+├── business/
+│   ├── valueBusiness.js
+│   ├── forecastCashFlow.js
+│   ├── calculateBreakEven.js
+│   ├── manageWorkingCapital.js
+│   ├── analyzeCapitalStructure.js
+│   ├── modelStartupFinancials.js
+│   ├── trackInvoices.js
+│   └── calculateUnitEconomics.js
+│
+├── risk/
+│   ├── analyzeInsuranceNeeds.js
+│   ├── compareInsurancePlans.js
+│   ├── hedgePortfolio.js
+│   ├── manageCurrencyRisk.js
+│   └── runStressTest.js
+│
+├── education/
+│   ├── explainConcept.js
+│   ├── translateJargon.js
+│   ├── showCaseStudy.js
+│   ├── runFinancialQuiz.js
+│   ├── generateLearningPath.js
+│   └── summarizeFinancialNews.js
+│
+├── compliance/
+│   ├── addDisclaimer.js
+│   ├── checkRegulations.js
+│   ├── encryptUserData.js
+│   ├── logAuditTrail.js
+│   ├── detectBias.js
+│   └── escalateToHuman.js
+│
+├── integrations/
+│   ├── linkBankAccount.js
+│   ├── syncBrokerage.js
+│   ├── connectAccountingSoftware.js
+│   ├── setReminders.js
+│   ├── exportReport.js
+│   └── enableMobileAccess.js
+│
+└── index.js        ← exports everything from all folders
