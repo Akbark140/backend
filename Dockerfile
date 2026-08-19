@@ -5,6 +5,8 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV=production
 
+ENV ALLOW_INSECURE_DB=true
+
 # Install production dependencies
 COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
