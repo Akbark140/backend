@@ -29,7 +29,7 @@ const config = {
   PORT: Number(process.env.PORT) || 5000,
 
   // Database
-  DATABASE_URL: required('DATABASE_URL', 'postgresql://postgres:@Math2029@localhost:5432/postgres'),
+  DATABASE_URL:  process.env.DATABASE_URL || required('DATABASE_URL', 'postgresql://postgres:@Math2029@localhost:5432/postgres'),
 
   // Redis
   REDIS_URL: required('REDIS_URL', 'redis://localhost:6379'),
