@@ -1,0 +1,6 @@
+.env
+.env.*
+.env.vault
+node_modules
+npm-debug.log
+.git
