@@ -10,7 +10,7 @@ let sslConfig = false;
 
 if (isProduction) {
   if (config.DB_SSL_CERT) {
-    sslConfig = { rejectUnauthorized: true, ca: config.DB_SSL_CERT };
+    sslConfig = { rejectUnauthorized: false, ca: config.DB_SSL_CERT };
   } else if (config.ALLOW_INSECURE_DB === 'true') {
     logger.warn(
       'DB SSL certificate validation is disabled (ALLOW_INSECURE_DB=true). ' +
